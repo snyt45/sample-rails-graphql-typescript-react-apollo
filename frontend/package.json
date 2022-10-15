@@ -16,7 +16,8 @@
     "@mui/material": "^5.10.9",
     "graphql": "^16.6.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.2"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.13.7",
