@@ -10,6 +10,8 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
+  /** An ISO 8601-encoded datetime */
+  ISO8601DateTime: any;
 };
 
 export type Mutation = {
@@ -22,4 +24,22 @@ export type Query = {
   __typename?: 'Query';
   /** An example field added by the generator */
   testField: Scalars['String'];
+  /** TODO一覧 */
+  todos?: Maybe<Array<Todo>>;
+};
+
+export enum Status {
+  /** 完了 */
+  Completed = 'completed',
+  /** 未着手 */
+  Waiting = 'waiting'
+}
+
+export type Todo = {
+  __typename?: 'Todo';
+  createdAt: Scalars['ISO8601DateTime'];
+  id: Scalars['ID'];
+  status: Status;
+  title?: Maybe<Scalars['String']>;
+  updatedAt: Scalars['ISO8601DateTime'];
 };

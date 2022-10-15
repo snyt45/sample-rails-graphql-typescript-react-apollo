@@ -1,3 +1,8 @@
+"""
+An ISO 8601-encoded datetime
+"""
+scalar ISO8601DateTime
+
 type Mutation {
   """
   An example field added by the generator
@@ -10,4 +15,29 @@ type Query {
   An example field added by the generator
   """
   testField: String!
+
+  """
+  TODO一覧
+  """
+  todos: [Todo!]
+}
+
+enum Status {
+  """
+  完了
+  """
+  completed
+
+  """
+  未着手
+  """
+  waiting
+}
+
+type Todo {
+  createdAt: ISO8601DateTime!
+  id: ID!
+  status: Status!
+  title: String
+  updatedAt: ISO8601DateTime!
 }

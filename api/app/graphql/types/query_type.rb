@@ -13,5 +13,7 @@ module Types
     def test_field
       "Hello World!"
     end
+
+    field :todos, resolver: Resolvers::Todos::TodoListResolver, description: 'TODO一覧'
   end
 end
