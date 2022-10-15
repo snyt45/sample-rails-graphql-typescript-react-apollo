@@ -1,0 +1,21 @@
+overwrite: true
+schema:
+  - ../api/gen/schema.graphql    
+generates:
+  src/gen/types.ts:
+    plugins:
+      - typescript
+  src/gen:
+    documents:
+      - src/**/*.graphql
+    preset: near-operation-file
+    presetConfig:
+      baseTypesPath: "types"
+      extension: ".generated.ts"
+    plugins:
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      withHooks: true
+      withComponent: false
+      withHOC: false
