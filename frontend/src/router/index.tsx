@@ -1,11 +1,11 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
-import TestComponent from '../test_components/TestComponent'
+import TodoList from '../features/todos/index/index'
 
 const SampleAppRoutes = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<TestComponent />} />
+      <Route path="/" element={<TodoList />} />
     </Routes>
   </BrowserRouter>
 )

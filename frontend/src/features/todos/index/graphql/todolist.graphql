@@ -1,0 +1,7 @@
+query todoList {
+  todos {
+    id
+    status
+    title
+  }
+}
