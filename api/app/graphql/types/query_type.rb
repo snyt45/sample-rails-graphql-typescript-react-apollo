@@ -15,5 +15,6 @@ module Types
     end
 
     field :todos, resolver: Resolvers::Todos::TodoListResolver, description: 'TODO一覧'
+    field :todo, resolver: Resolvers::Todos::TodoResolver, description: 'TODO詳細'
   end
 end

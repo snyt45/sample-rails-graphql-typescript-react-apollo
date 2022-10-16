@@ -80,6 +80,11 @@ type Query {
   testField: String!
 
   """
+  TODO詳細
+  """
+  todo(id: String!): Todo
+
+  """
   TODO一覧
   """
   todos: [Todo!]

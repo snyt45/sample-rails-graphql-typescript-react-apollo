@@ -72,8 +72,15 @@ export type Query = {
   __typename?: 'Query';
   /** An example field added by the generator */
   testField: Scalars['String'];
+  /** TODO詳細 */
+  todo?: Maybe<Todo>;
   /** TODO一覧 */
   todos?: Maybe<Array<Todo>>;
+};
+
+
+export type QueryTodoArgs = {
+  id: Scalars['String'];
 };
 
 export enum Status {
