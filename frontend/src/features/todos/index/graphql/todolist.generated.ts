@@ -1,4 +1,4 @@
-import * as Types from '../../../gen/types';
+import * as Types from '../../../../gen/types';
 
 import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';

@@ -11,7 +11,7 @@ const TodoList = () => {
       <List>
         {todos.map((todo) => (
           <ListItem divider key={todo.id}>
-            <Link href="#" underline="none">
+            <Link href={`todos/edit/${todo.id}`} underline="none">
               <ListItemText primary={`${todo.title} （${todo.status}）`} />
             </Link>
           </ListItem>

@@ -1,5 +1,5 @@
 import Typography from "@mui/material/Typography";
-import { Toolbar, AppBar, Container } from "@mui/material";
+import { Toolbar, AppBar, Container, Link } from "@mui/material";
 
 const Header = () => {
   return (
@@ -7,7 +7,9 @@ const Header = () => {
       <AppBar>
         <Container maxWidth="lg">
           <Toolbar>
-            <Typography variant="h6" component="div">SAMPLE TODO APP</Typography>
+            <Typography variant="h6" component="div">
+              <Link href="/" sx={{ color: "white" }}>SAMPLE TODO APP</Link>
+            </Typography>
           </Toolbar>
         </Container>
       </AppBar>

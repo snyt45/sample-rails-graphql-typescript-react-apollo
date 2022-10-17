@@ -1,0 +1,9 @@
+mutation updateTodo($input: UpdateTodoInput!){
+  updateTodo(input: $input) {
+    todo {
+      id
+      status
+      title
+    }
+  }
+}
