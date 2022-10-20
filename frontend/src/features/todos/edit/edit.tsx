@@ -6,6 +6,8 @@ import { TodoQueryVariables, useTodoQuery } from "./graphql/todo.generated"
 import { Todo } from "../../../gen/types";
 import { useUpdateTodo } from "./composable/useUpdateTodo";
 import { UpdateTodoMutationVariables } from "./graphql/update_todo.generated";
+import { useDeleteTodo } from "./composable/useDeleteTodo";
+import { DeleteTodoMutationVariables } from "./graphql/delete_todo.generated";
 
 export const TodoEdit = () => {
   const statuses = [
@@ -65,14 +67,30 @@ export const TodoEdit = () => {
       formState.status,
     ]
   )
+  
   const submit = () => onUpdateTodo(mutateVariables)
+
+  const { errors: deleteErrors, onDeleteTodo } = useDeleteTodo()
+  const deleteMutateVariables: DeleteTodoMutationVariables = { input: { id: match?.params?.id as string } }
+  const onDelete = () => onDeleteTodo(deleteMutateVariables)
 
   return (
     <MainContainer>
-      <Typography component="h2" variant="h5">TODO編集</Typography>
+      <Grid container justifyContent="space-between">
+        <Typography component="h2" variant="h5">TODO編集</Typography>
+        <Button
+          type="button"
+          variant="contained"
+          color="error"
+          onClick={onDelete}
+        >
+          削除
+        </Button>
+      </Grid>
       <div>
         <ul>
           {errors.map((e) => (<li key={e.message}>{e.message}</li>))}
+          {deleteErrors.map((e) => (<li key={e.message}>{e.message}</li>))}
         </ul> 
       </div>
       <Box component="form" noValidate autoComplete="off"
