@@ -23,7 +23,6 @@ default: &default
 
 development:
   <<: *default
-  database: sample_app_development
   username: sample_app
   password: sample_app_password
   host: db

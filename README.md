@@ -7,7 +7,7 @@ TODO一覧が表示できて、TODOの登録・編集・削除ができます。
 - ServerSide(on Docker)
   - Rails (API)
   - GraphQL
-- FrontEnd(on Host)
+- FrontEnd(on Docker)
   - React
   - TypeScript
   - Apollo
@@ -16,18 +16,14 @@ TODO一覧が表示できて、TODOの登録・編集・削除ができます。
 次のライブラリやツールが必要になるため、事前にインストールしておいてください。
 
 - Docker
-- Node.js、Yarn
 
 ## セットアップ
 
 ```
-// TODO: 1コマンドでセットアップできるようにする
 docker compose build
-docker compose run --rm api bundle install
-docker compose run --rm api rails db:create
-docker compose run --rm api rails db:migrate db:seed
+docker compose run --rm api rails bin/setup db:migrate db:seed
 docker compose up -d
-
-cd frontend && yarn install
-cd frontend && yarn dev --host
 ```
+
+サーバー側は、 http://localhost:3000/ にアクセスしてRailsの画面が表示されれば成功です。
+フロント側は、 http://localhost:3030/ にアクセスしてTODO一覧が表示されれば成功です。

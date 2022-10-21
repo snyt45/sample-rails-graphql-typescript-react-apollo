@@ -24,11 +24,20 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data:delegated
     ports:
-      - "5432:5432"
+      - 5432:5432
     environment:
       POSTGRES_USER: sample_app
       POSTGRES_PASSWORD: sample_app_password
-      POSTGRES_DB: sample_app_development
+  front: 
+    container_name: sample_front
+    build:
+      context: .
+      dockerfile: ./.docker/front/Dockerfile
+    volumes:
+      - ./frontend:/frontend:cached
+    command: 'yarn dev --host'
+    ports:
+      - 3030:3030
 
 volumes:
   postgres-data:
